@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cô Giáo Thơm - Dạy Tiếng Trung</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #0f172a;
+        color: white;
+      }
+
+      header {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: url("/mnt/data/ad.jpg") center/cover no-repeat;
+        position: relative;
+      }
+
+      header::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+      .hero {
+        position: relative;
+        z-index: 2;
+        animation: fadeIn 2s ease;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+      .hero p {
+        margin: 10px 0;
+        font-size: 20px;
+      }
+
+      .btn {
+        margin-top: 20px;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 30px;
+        background: linear-gradient(45deg, #ff4d6d, #ff8fa3);
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        transform: scale(1.1);
+      }
+
+      section {
+        padding: 80px 20px;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .skill {
+        padding: 10px 20px;
+        background: #2563eb;
+        border-radius: 20px;
+      }
+
+      .profile-img {
+        width: 200px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        border: 4px solid white;
+      }
+
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 10px;
+      }
+
+      form button {
+        width: 100%;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #020617;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="hero">
+        <h1>Cô Giáo Thơm</h1>
+        <p>Dạy Tiếng Trung Chuẩn Bắc Kinh 🇨🇳</p>
+        <button class="btn" onclick="scrollToSection()">Khám phá</button>
+      </div>
+    </header>
+
+    <section id="main">
+      <div class="container">
+        <div class="card" style="text-align: center">
+          <img src="./ad.jpg" class="profile-img" />
+          <h2>Giới thiệu</h2>
+          <p>
+            Cô Thơm có chứng chỉ <b>HSKK</b>, hơn <b>3 năm kinh nghiệm</b> giảng
+            dạy, hiện đang làm việc tại <b>Bắc Kinh - Trung Quốc</b>.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Điểm nổi bật</h2>
+          <div class="skills">
+            <div class="skill">Phát âm chuẩn</div>
+            <div class="skill">Dễ hiểu</div>
+            <div class="skill">Thực tế</div>
+            <div class="skill">Cam kết tiến bộ</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Nội dung học</h2>
+          <p>
+            ✔ Giao tiếp nhanh<br />
+            ✔ HSK từ 1-6<br />
+            ✔ Luyện phản xạ<br />
+            ✔ Dạy từ cơ bản đến nâng cao
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Đăng ký học</h2>
+          <form onsubmit="submitForm(event)">
+            <input type="text" placeholder="Tên của bạn" required />
+            <input type="text" placeholder="Số điện thoại" required />
+            <textarea placeholder="Bạn muốn học gì?"></textarea>
+            <button class="btn">Gửi đăng ký</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>Liên hệ</h2>
+          <p>Facebook: <b>Thơm Tống</b></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 - Cô Giáo Thơm</p>
+    </footer>
+
+    <script>
+      function scrollToSection() {
+        document.getElementById("main").scrollIntoView({ behavior: "smooth" });
+      }
+
+      function submitForm(e) {
+        e.preventDefault();
+        alert("Đăng ký thành công! Cô Thơm sẽ liên hệ bạn sớm.");
+      }
+    </script>
+  </body>
+</html>
